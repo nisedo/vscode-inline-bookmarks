@@ -584,7 +584,8 @@ class InlineBookmarkTreeDataProvider {
         }
 
         if (this.filterTreeViewWords && this.filterTreeViewWords.length) {
-            elements = elements.filter(e => this.filterTreeViewWords.some(rx => new RegExp(rx, 'g').test(e.label)));
+            // Only filter LOCATION nodes (bookmarks) that have a label, not FILE nodes
+            elements = elements.filter(e => e.type !== NodeType.LOCATION || this.filterTreeViewWords.some(rx => new RegExp(rx, 'g').test(e.label)));
         }
 
         return elements;

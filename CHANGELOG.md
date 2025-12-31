@@ -2,6 +2,7 @@
 
 ## 0.1.0
 - fix: VSCode 1.72.0 introduced an incompatibility raising the error: 'Extension tintinweb.vscode-inline-bookmarks has provided an invalid tree item.' - #56 #57
+- fix: Tree view filter (`Filter View ...`) was not working - filter was incorrectly applied to file nodes instead of bookmark nodes only
 - new: Optionally, hide items from the bookmarks view that are excluded by a downstream `.gitignore` file (requires reload)
   - option: `inline-bookmarks.view.exclude.gitIgnore` default: `false`
 
